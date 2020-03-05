@@ -2,11 +2,11 @@ import React from 'react';
 
 export const styles = () => {
 	return (
-		<style jsx>
+		<style jsx global>
 			{ `
 h1,
 a {
-  font-family: "Arial";
+  font-family: 'Arial';
 }
 
 ul {

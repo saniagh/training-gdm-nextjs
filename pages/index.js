@@ -1,5 +1,7 @@
 import Layout from '../src/components/MyLayout';
 import Link from 'next/link';
+import { connect } from 'react-redux';
+import image from '../src/images/download.jpeg';
 
 function getPosts() {
 	return [
@@ -9,10 +11,11 @@ function getPosts() {
 	];
 }
 
-export default function Blog() {
+const Blog = () => {
+	const layout = require('../src/utils/layout.js').Index();
 	return (
 		<Layout>
-			<h1>My Blog</h1>
+			<h1>{ layout.pageTitle }</h1>
 			<ul>
 				{ getPosts().map(post => (
 					<li key={ post.id }>
@@ -22,7 +25,10 @@ export default function Blog() {
 					</li>
 				)) }
 			</ul>
+			<img src={ image } style={{ width: 150 }}/>
 			{ require('../src/utils/utils.js').importStyles('index') }
 		</Layout>
 	);
-}
+};
+
+export default connect()(Blog);

@@ -8,6 +8,6 @@ export const importStyles = file => {
 	if (NODE_ENV !== 'production') {
 		return require(`../css/ssr/${ file }.js`).styles();
 	} else {
-		return require(`../css/dev/${ file }.scss`);
+		require(`../css/dev/${ file }.scss`);
 	}
 };

@@ -7,7 +7,6 @@ export const styles = () => {
 @media screen and (max-width: 1920px) {
   body {
     background-color: #eeeeee;
-    font-size: 13px;
   }
 }
 
